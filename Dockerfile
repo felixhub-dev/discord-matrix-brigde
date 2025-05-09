@@ -4,6 +4,8 @@ FROM golang:1-alpine3.18 AS builder
 
 RUN apk add --no-cache git ca-certificates build-base su-exec olm-dev
 
+RUN apk update && apk add go=1.23
+
 COPY . /build
 WORKDIR /build
 RUN go build -o /usr/bin/mautrix-discord
