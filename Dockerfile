@@ -23,4 +23,4 @@ COPY --from=builder /build/example-config.yaml /opt/mautrix-discord/example-conf
 COPY --from=builder /build/docker-run.sh /docker-run.sh
 VOLUME /data
 
-CMD ["/docker-run.sh"]
+CMD ["/docker-run.sh", "--ignore-foreign-tables"]
