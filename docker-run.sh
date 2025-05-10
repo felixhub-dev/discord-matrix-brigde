@@ -24,7 +24,6 @@ if [[ ! -f /data/config.yaml ]]; then
 fi
 
 if [[ ! -f /data/registration.yaml ]]; then
-	echo /usr/bin/mautrix-discord -g -c /data/config.yaml -r /data/registration.yaml
 	/usr/bin/mautrix-discord -g -c /data/config.yaml -r /data/registration.yaml
 	echo "Didn't find a registration file."
 	echo "Generated one for you."
