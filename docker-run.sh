@@ -24,7 +24,8 @@ if [[ ! -f /data/config.yaml ]]; then
 fi
 
 if [[ ! -f /data/registration.yaml ]]; then
-	/usr/bin/mautrix-discord -g -c /data/config.yaml -r /data/registration.yaml $FLAGS $@
+	echo /usr/bin/mautrix-discord -g -c /data/config.yaml -r /data/registration.yaml
+	/usr/bin/mautrix-discord -g -c /data/config.yaml -r /data/registration.yaml
 	echo "Didn't find a registration file."
 	echo "Generated one for you."
 	echo "See https://docs.mau.fi/bridges/general/registering-appservices.html on how to use it."
@@ -33,4 +34,4 @@ fi
 
 cd /data
 fixperms
-exec su-exec $UID:$GID /usr/bin/mautrix-discord
+exec su-exec $UID:$GID /usr/bin/mautrix-discord $FLAGS $@
